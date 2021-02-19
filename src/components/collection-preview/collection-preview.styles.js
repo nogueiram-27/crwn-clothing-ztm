@@ -6,9 +6,14 @@ export const CollectionPreviewContainer = styled.div`
     margin-bottom: 30px;
 `
 
-export const TitleContainer = styled.h1`
+export const TitleContainer = styled.h2`
     font-size: 28px;
     margin-bottom: 25px;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
 `
 
 export const PreviewContainer = styled.div`

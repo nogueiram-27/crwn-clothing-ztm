@@ -7,6 +7,7 @@ import CollectionItem from '../../components/collection-item/collection-item.com
 import { CollectionPageContainer, TitleContainer, ItemsContainer } from './collection.styles'
 
 const CollectionPage = ({ collection }) => {
+    console.log('collection', collection);
     const { title, items } = collection;    
     return(
         <CollectionPageContainer>
@@ -22,8 +23,10 @@ const CollectionPage = ({ collection }) => {
     )
 }
 
-const mapStateToProps = (state, ownProps) => ({
-    collection: selectCollection(ownProps.match.params.collectionId)(state)
-})
+const mapStateToProps = (state, ownProps) => {
+    console.log('ownProps', ownProps)
+    return{collection: selectCollection(ownProps.match.params.collectionId)(state)}
+    
+}
 
 export default connect(mapStateToProps)(CollectionPage);
