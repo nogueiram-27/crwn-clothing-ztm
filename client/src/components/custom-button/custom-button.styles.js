@@ -11,7 +11,6 @@ const buttonStyles = css`
     }
 `
 
-
 const invertedStyles =  css`
     background-color: white;
     color: black;

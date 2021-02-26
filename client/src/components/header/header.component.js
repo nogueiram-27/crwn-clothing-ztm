@@ -25,13 +25,13 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
             </OptionLink>
             {
                 currentUser ?
-                <OptionLink as='div' onClick={signOutStart}>
+                (<OptionLink as='div' onClick={signOutStart}>
                     SIGN OUT
-                </OptionLink>
+                </OptionLink>)
                :
-                <OptionLink to='/signin'>
+                (<OptionLink to='/signin'>
                     SIGN IN
-                </OptionLink>
+                </OptionLink>)
             }
             <CartIcon /> 
         </OptionsContainer>

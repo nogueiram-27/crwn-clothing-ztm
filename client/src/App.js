@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect'
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
-import './App.css';
+import { GlobalStyle } from './global.styles'
 
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
@@ -21,6 +21,7 @@ const App = ({ currentUser, checkUserSession }) => {
   
   return (
     <div >
+      <GlobalStyle/>
       <Header/>
         <Switch>
         <Route exact={true} path='/' component={Homepage}/>
