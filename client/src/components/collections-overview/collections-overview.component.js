@@ -7,7 +7,7 @@ import CollectionPreview from '../../components/collection-preview/collection-pr
 
 import { CollectionsOverviewContainer } from './collections-overview.styles'
 
-const CollectionsOverview = ({ collections, ...otherCollectionProps }) => (
+export const CollectionsOverview = ({ collections, ...otherCollectionProps }) => (
     <CollectionsOverviewContainer>
     {
         collections.map(({id, ...otherCollectionProps}) => (

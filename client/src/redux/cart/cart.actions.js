@@ -22,3 +22,21 @@ export const removeItem = (item) => ({
 export const clearCart = () => ({
     type: cartActionsType.CLEAR_CART
 })
+
+export const checkoutCart = (cartItems) => ({
+    type: cartActionsType.CHECK_OUT_CART,
+    payload: cartItems
+})
+
+export const setUserCartItems = (cartItems) => ({
+    type: cartActionsType.SET_USER_CART_ITEMS,
+    payload: cartItems
+})
+
+export const updateUserCartItems = () => ({
+    type: cartActionsType.UPDATE_USER_CART_ITEMS,
+})
+
+export const cleanUserCartItems = () => ({
+    type: cartActionsType.CLEAN_USER_CART_ITEMS,
+})

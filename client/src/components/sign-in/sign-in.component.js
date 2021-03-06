@@ -9,7 +9,7 @@ import CustomButton from '../custom-button/custom-button.component'
 
 import { SignInContainer, TitleContainer, SignInButtonsContainer } from './sign-in.styles'
 
-const SignIn = ({ emailSignInStart, googleSignInStart }) => {
+export const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
     const [credentials, setCredentials] = useState({ email: '', password: ''  })  
     const { email, password } = credentials;

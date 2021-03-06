@@ -39,6 +39,7 @@ export const FormInputContainer = styled.input`
       ${shrinkLabelStyles};
     }
 `
+FormInputContainer.displayName = 'FormInputContainer'
 
 export const LabelContainer = styled.label`
     color: ${SUB_COLOR};
@@ -54,3 +55,4 @@ export const LabelContainer = styled.label`
         ${shrinkLabelStyles};
     }
 `
+LabelContainer.displayName = 'LabelContainer'

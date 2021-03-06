@@ -38,3 +38,10 @@ export const removeItemFromCart = (cartItems, cartItemToRemove)  => {
             : cartItem
     )
 }
+
+export function compareCartItemsArray(cartItemsDb, newCartItems) {
+    if (JSON.stringify(cartItemsDb) !== JSON.stringify(newCartItems)) {
+        return true;
+    }
+    return false;
+}

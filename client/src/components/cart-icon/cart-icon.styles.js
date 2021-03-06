@@ -11,6 +11,8 @@ export const CartIconContainer = styled.div`
     cursor: pointer;
 `
 
+CartIconContainer.displayName = 'CartIconContainer'
+
 export const ShoppingIconContainer = styled(ShoppingIcon)`
     width: 24px;
     height: 24px;

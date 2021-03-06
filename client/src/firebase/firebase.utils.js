@@ -43,11 +43,52 @@ const config = {
       return userRef;
   };
 
+  export const upsertUserCartItemsDocuments = async (cartItems, userId) => {
+    if (!userId) return;
+    const userCartItemsCollection = firestore.collection('userCartItems');      
+    const userCartItemsRef = await firestore.collection('userCartItems').where('userId', '==', userId).get()
+        
+    if (!userCartItemsRef.docs.length) {
+        try {
+            
+            const newuserCartItemsDoc = userCartItemsCollection.doc();
+            await newuserCartItemsDoc.set ({
+                userId: userId,
+                items: cartItems
+            })
+        } catch (error) {
+            console.log('Error creating user cart items.', error.message);
+        }
+    } else {
+        try {
+            const userCartItemsDoc = userCartItemsCollection.doc(userCartItemsRef.docs[0].id)
+            
+            await userCartItemsDoc.update({
+                items: cartItems
+            })
+        } catch (error) {
+            console.log('Error updating user cart items.', error.message);
+        }
+    }
+  } 
+
+  export const getUserCartItems = async (userId) => {
+
+      const userCartItemsDoc = await firestore.collection('userCartItems').where('userId', '==', userId)
+        .get()
+        .then((querySnapshot) => {
+            if (!querySnapshot.docs.length) return [];
+                const doc = querySnapshot.docs[0].data()
+                const { items } = doc
+                return items
+            })
+        return userCartItemsDoc
+  }
+
   export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
       const collectionRef = firestore.collection(collectionKey);
       const batch = firestore.batch();
 
-      console.log('objectsToAdd', objectsToAdd);
       objectsToAdd.forEach(obj => {
           const newDocRef = collectionRef.doc();
           batch.set(newDocRef, obj);      

@@ -7,7 +7,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import { SignUpContainer, TitleContainer } from './sign-up.styles';
 
-const SignUp = ({ signUpStart }) => {
+export const SignUp = ({ signUpStart }) => {
 
     const [credentials, setCredentials] = useState ({ displayName: '', email: '', password: '', confirmPassword: '' })
     const { displayName, email, password, confirmPassword } = credentials;

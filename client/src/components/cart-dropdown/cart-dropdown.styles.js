@@ -27,7 +27,10 @@ export const EmptyMessageContainer = styled.span`
     font-size: 18px;
     margin: 50px auto;
 `
+EmptyMessageContainer.displayName = 'EmptyMessageContainer'
 
 export const ButtonContainer = styled(CustomButton)`
     margin-top: auto;
 `
+
+ButtonContainer.displayName='ButtonContainer'

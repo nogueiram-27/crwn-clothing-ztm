@@ -76,3 +76,5 @@ export const AddButtonContainer = styled(CustomButton)`
         padding: 0 10px;
     }
 `
+
+AddButtonContainer.displayName = 'AddButtonContainer'

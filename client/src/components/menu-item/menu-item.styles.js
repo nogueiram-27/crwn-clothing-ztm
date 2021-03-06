@@ -37,6 +37,7 @@ export const MenuItemContainer = styled.div`
       height: 200px;
     }
 `
+MenuItemContainer.displayName = 'MenuItemContainer'
 
 export const BackgroundImagemContainer = styled.div`
     height: 100%;
@@ -45,6 +46,7 @@ export const BackgroundImagemContainer = styled.div`
     background-size: cover;
     background-image: ${({imageUrl }) => `url(${imageUrl})`}
 `
+BackgroundImagemContainer.displayName = 'BackgroundImagemContainer'
 
 export const ContentContainer = styled.div`
     height: 90px;
